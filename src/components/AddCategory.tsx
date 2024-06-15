@@ -10,6 +10,13 @@ export const AddCategory = ({ addCategoryHandler }: Props) => {
   const onInputChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(target.value);
   };
+
+  const onAddCategoryClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    addCategoryHandler(inputValue);
+    setInputValue("");
+  };
+
   return (
     <form>
       <input
@@ -18,14 +25,7 @@ export const AddCategory = ({ addCategoryHandler }: Props) => {
         value={inputValue}
         onChange={onInputChange}
       />
-      <button
-        type="submit"
-        onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-          e.preventDefault();
-          addCategoryHandler(inputValue);
-          setInputValue("");
-        }}
-      >
+      <button type="submit" onClick={onAddCategoryClick}>
         Add Category
       </button>
     </form>
