@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { AddCategory } from "./components/AddCategory";
 
 export function GiftExpertApp() {
   const [categories, setCategories] = useState(["Naruto", "Dragon ball"]);
 
-  const onAddCategory = () => {
-    setCategories([...categories, "Power Rangers"]);
+  const onAddCategory = (category: string) => {
+    setCategories([...categories, category]);
   };
 
   return (
@@ -13,7 +14,7 @@ export function GiftExpertApp() {
       <h1>Gif Expert App</h1>
 
       {/* input search */}
-      <button onClick={onAddCategory}>Add</button>
+      <AddCategory addCategoryHandler={onAddCategory} />
 
       {/* Gif List */}
       <ol>
