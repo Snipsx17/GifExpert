@@ -1,33 +1,33 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 type Props = {
-  addCategoryHandler: (category: string) => void;
+  onNewCategory: (category: string) => void;
 };
 
-export const AddCategory = ({ addCategoryHandler }: Props) => {
-  const [inputValue, setInputValue] = useState("");
+export const AddCategory = ({ onNewCategory }: Props) => {
+  const [inputValue, setInputValue] = useState<string>('');
 
-  const onInputChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(target.value);
   };
 
-  const onAddCategoryClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    addCategoryHandler(inputValue);
-    setInputValue("");
+  const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (inputValue.trim().length <= 1) return;
+    onNewCategory(inputValue);
+    setInputValue('');
   };
 
   return (
-    <form>
+    <form onSubmit={onSubmitHandler}>
       <input
         type="text"
         placeholder="Add Category"
         value={inputValue}
-        onChange={onInputChange}
+        onChange={onChangeHandler}
+        name="AddCategory"
       />
-      <button type="submit" onClick={onAddCategoryClick}>
-        Add Category
-      </button>
+      <button>Add Category</button>
     </form>
   );
 };
