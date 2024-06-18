@@ -3,7 +3,7 @@ import { AddCategory } from './components/AddCategory';
 import { GifGrid } from './components/GifGrid';
 
 export function GiftExpertApp() {
-  const [categories, setCategories] = useState(['Naruto']);
+  const [categories, setCategories] = useState<string[]>([]);
 
   const onNewCategory = (newCategory: string) => {
     if (categories.includes(newCategory)) return;
