@@ -20,13 +20,18 @@ export const AddCategory = ({ onNewCategory }: Props) => {
 
   return (
     <form onSubmit={onSubmitHandler}>
-      <input
-        type="text"
-        placeholder="Add Category"
-        value={inputValue}
-        onChange={onChangeHandler}
-        name="AddCategory"
-      />
+      <div className="inputGroup">
+        <input
+          id="addCategory"
+          type="text"
+          placeholder="Type something"
+          value={inputValue}
+          onChange={onChangeHandler}
+          name="AddCategory"
+        />
+        <label htmlFor="addCategory">Type something and find a gif</label>
+      </div>
+
       <button>Add Category</button>
     </form>
   );

@@ -7,24 +7,61 @@ body {
   padding: 60px;
 }
 
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
 input {
   background-color: white;
   border-radius: 5px;
   border: 1px solid rgb(97, 32, 158);
   color: black;
-  font-size: 1.2rem;
+  font-size: 1rem;
   outline: none;
-  padding: 10px 15px;
-  width: 100%;
+  padding: 15px;
+  margin-right: 15px;
+  margin-bottom: 7px;
 }
 
-h2 {
-  font-size: 1.5rem;
+button {
+  background-color: rgb(97, 32, 158);
+  border: none;
+  padding: 14px 15px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 5px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+}
+
+.inputGroup label {
+  display: inline;
+  font-size: 0.8rem;
+  font-weight: 300;
+  font-style: italic;
 }
 
 .card-grid {
@@ -47,12 +84,13 @@ h3 {
   margin-bottom: 20px;
   margin-right: 20px;
   overflow: hidden;
+  width: 300px;
 }
 
 .card p {
   background-color: white;
   flex: 1;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-top: 5px;
   padding: 5px 20px 0px 20px;
   text-align: center;

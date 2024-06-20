@@ -31,6 +31,5 @@ export const getGifs = async (category: string) => {
       url,
     })
   );
-  console.log(gits);
   return gits;
 };

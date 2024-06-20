@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { AddCategory } from './components/AddCategory';
-import { GifGrid } from './components/GifGrid';
+import { AddCategory, GifGrid } from './components';
 
 export function GiftExpertApp() {
   const [categories, setCategories] = useState<string[]>([]);
@@ -16,7 +15,7 @@ export function GiftExpertApp() {
 
       <AddCategory onNewCategory={onNewCategory} />
 
-      {categories.map((category) => (
+      {[...categories].reverse().map((category) => (
         <GifGrid key={category} category={category} />
       ))}
     </>
